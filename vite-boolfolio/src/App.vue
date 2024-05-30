@@ -1,6 +1,7 @@
 <script >
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 
 
@@ -9,6 +10,7 @@ export default {
     name: 'App',
     components: {
         AppHeader,
+        AppFooter
 
 
     },
@@ -55,8 +57,7 @@ export default {
 
 
     <main>
-        <div class="container">
-
+        <div class="container ciao1">
             <div class="row">
                 <div class="col" v-for="project in projects.data">
                     <div class="card-img-top">
@@ -78,8 +79,20 @@ export default {
 
 
     <footer>
-        footer
+
+        <AppFooter />
+
+
+
     </footer>
 </template>
 
-<style></style>
+<style>
+main{
+    height: 80vh;
+
+}
+
+
+
+</style>
