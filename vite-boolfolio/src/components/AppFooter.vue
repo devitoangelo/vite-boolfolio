@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid" style="background-color: rgb(234, 225, 225);">
+    <div class="container-fluid pt-5" style="background-color: rgb(234, 225, 225);">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 ">
             <div class="col text-center">
                 <h3>Descriptio Me</h3>

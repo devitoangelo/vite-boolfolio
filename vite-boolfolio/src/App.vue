@@ -5,12 +5,16 @@ import AppFooter from './components/AppFooter.vue';
 
 
 
+
+
 export default {
 
     name: 'App',
     components: {
         AppHeader,
-        AppFooter
+        AppFooter,
+
+
 
 
     },
@@ -57,9 +61,9 @@ export default {
 
 
     <main>
-        <div class="container ciao1">
-            <div class="row">
-                <div class="col" v-for="project in projects.data">
+        <div class="container ">
+            <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4" >
+                <div class="col " v-for="project in projects.data">
                     <div class="card-img-top">
                         <template v-if="project.cover_image.startsWith('uploads')">
                             <img :src="base_api_url + '/storage/' + project.cover_image" alt="">
@@ -71,6 +75,9 @@ export default {
                     <h2>
                         {{ project.title }}
                     </h2>
+                    <p>
+                        {{ project.content }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -88,11 +95,12 @@ export default {
 </template>
 
 <style>
-main{
-    height: 80vh;
+
+main {
+
+    background-color: rgb(40, 39, 39);
+    color: white;
+    padding-top: 5rem;
 
 }
-
-
-
 </style>
