@@ -2,11 +2,14 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 
+
+
 export default {
 
     name: 'App',
     components: {
         AppHeader,
+
 
     },
     data() {
@@ -53,6 +56,7 @@ export default {
 
     <main>
         <div class="container">
+
             <div class="row">
                 <div class="col" v-for="project in projects.data">
                     <div class="card-img-top">
@@ -62,20 +66,13 @@ export default {
                         <template>
                             <img :src="project.cover_image" alt="">
                         </template>
-
-
-
-
-
                     </div>
                     <h2>
                         {{ project.title }}
-
                     </h2>
                 </div>
             </div>
         </div>
-
 
     </main>
 
