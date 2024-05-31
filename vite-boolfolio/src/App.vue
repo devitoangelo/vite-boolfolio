@@ -78,6 +78,7 @@ export default {
                     <p>
                         {{ project.content }}
                     </p>
+                    
                 </div>
             </div>
         </div>
