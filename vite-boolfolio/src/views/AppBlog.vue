@@ -41,9 +41,6 @@ export default {
 </script>
 
 <template>
-    <h1>Page Blog</h1>
-
-
     <div class="container ">
         <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
             <div class="col " v-for="project in projects.data">
