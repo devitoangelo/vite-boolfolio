@@ -11,10 +11,10 @@ export default {
                 <img class="img_logo" src="/images/logo.png" alt="">
             </div>
             <div>
-                <a href="">Home</a>
-                <a href="">Projects</a>
-                <a href="">About</a>
-                <a href="">Contacts</a>
+                <router-link :to="{name: 'home'}">Home</router-link>
+                <router-link :to="{name: 'about'}">about</router-link>
+                <router-link :to="{name: 'blog'}">Blog</router-link>
+                <router-link :to="{name: 'contacts'}">Contacts</router-link>
             </div>
         </div>
 

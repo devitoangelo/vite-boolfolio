@@ -6,6 +6,7 @@ export default {
 
 <template>
     <div>
+        <h1>Page Contacts</h1>
 
     </div>
 </template>
