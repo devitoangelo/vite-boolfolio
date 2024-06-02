@@ -75,7 +75,7 @@ export default {
         </div>
     </div>
     <div class="container ">
-        <h1 class="latest_projects">Latest projects</h1>
+        <h1 class="latest_projects">Latest Projects</h1>
         <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4" style="justify-content: center;">
             <div class="col " v-for="project in laterProjects">
                 <div class="card-img-top">
@@ -111,7 +111,7 @@ export default {
 .latest_projects{
     display: flex;
     justify-content: center;
-    color: gold;
+    color: white;
     margin-top: 5rem;
     margin-bottom: 2rem;
 }
