@@ -3,6 +3,13 @@ import AppHome from "./views/AppHome.vue";
 import AppBlog from "./views/AppBlog.vue";
 import AppAbout from "./views/AppAbout.vue";
 import AppContacts from "./views/AppContacts.vue";
+import AppShow from "./views/AppShow.vue";
+
+
+const routes = [
+
+    { path: '/project/:slug', component: AppShow },
+]
 
 
 
