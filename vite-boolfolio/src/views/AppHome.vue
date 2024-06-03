@@ -47,6 +47,7 @@ export default {
                 <p>
                     My projects, Angelo Devto
                 </p>
+                
             </div>
             <div class="col">
                 <h1>Technologies used</h1>
@@ -108,7 +109,8 @@ export default {
     }
 
 }
-.latest_projects{
+
+.latest_projects {
     display: flex;
     justify-content: center;
     color: white;
