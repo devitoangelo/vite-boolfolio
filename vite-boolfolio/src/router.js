@@ -6,11 +6,6 @@ import AppContacts from "./views/AppContacts.vue";
 import AppShow from "./views/AppShow.vue";
 
 
-const routes = [
-
-    { path: '/project/:slug', component: AppShow },
-]
-
 
 
 
@@ -32,6 +27,11 @@ const router = createRouter({
             path: '/blog',
             name: 'blog',
             component: AppBlog
+        },
+        {
+            name: 'AppShow',
+            path: '/project/:slug',
+            component: AppShow
         },
         {
             path: '/contacts',
