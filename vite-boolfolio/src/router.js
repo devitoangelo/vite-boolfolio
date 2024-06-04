@@ -4,6 +4,7 @@ import AppBlog from "./views/AppBlog.vue";
 import AppAbout from "./views/AppAbout.vue";
 import AppContacts from "./views/AppContacts.vue";
 import AppShow from "./views/AppShow.vue";
+import NotFound from "./views/NotFound.vue";
 
 
 
@@ -38,12 +39,12 @@ const router = createRouter({
             name: 'contacts',
             component: AppContacts
         },
-        // {
-        //     path: '/:pathMatch',
-        //     name: '',
-        //     component: NotFaund
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFound
 
-        // }
+        }
 
     ]
 })
