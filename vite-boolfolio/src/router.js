@@ -37,9 +37,16 @@ const router = createRouter({
             path: '/contacts',
             name: 'contacts',
             component: AppContacts
-        }
+        },
+        // {
+        //     path: '/:pathMatch',
+        //     name: '',
+        //     component: NotFaund
+
+        // }
 
     ]
 })
 
 export default router;
+

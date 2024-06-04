@@ -1,67 +1,59 @@
 <script>
-import axios from 'axios';
-import { useRoute } from 'vue-router'
+import axios from "axios";
+import { useRoute } from "vue-router";
 
 export default {
-    name: 'AppShow',
-    data() {
-        return {
+  name: "AppShow",
+  data() {
+    return {
+      loading: true,
+      project: null,
+      base_api_url: "http://127.0.0.1:8000",
+      base_projects_url: "/api/projects",
+    };
+  },
+  methods: {
 
-            loading: true,
-            laterProjects: null,
-            base_api_url: 'http://127.0.0.1:8000',
-            base_projects_url: '/api/projects',
+  },
+  mounted() {
+    console.log(this.$route.params.id, this.base_api_url, this.base_projects_url);
 
+    const url =
+      this.base_api_url + this.base_projects_url + "/${this.$route.params.slug}";
+    console.log(url);
 
+    axios
+      .get(url)
+      .then((response) => {
+        console.log(response);
+        if (response.data.success) {
+          console.log(response.data.response);
+          this.project = response.data.response;
+          this.loading = false;
+        } else {
         }
-    },
-    methods: {
-        getProjectView(url) {
-            axios.get(url)
-                .then(response => {
-                    console.log(response);
-                    if (response.data.success) {
-                        console.log(response.data.response);
-                        this.laterProjects = this.response.data.response
-                        this.loading = false
-                        console.log(this.laterProjects);
-                    } else {
-
-                    }
-
-                })
-                .catch(err => {
-                    console.error(err)
-                }
-                )
-        }
-
-    },
-    mounted() {
-
-        // console.log(this.$route.params.id, this.base_api_url, this.base_projects_url);
-        const slug = this.$route.params.slug
-        const url = this.base_api_url + this.base_projects_url + '/' + slug;
-        this.getProjectView(url)
-        // console.log(url);
-
-
-
-
-    }
-
-}
-
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  },
+};
 </script>
 
-<template>
-    <router-link :to="{ name: 'AppShow', params: { slug: project } }"> View post</router-link>
-    <div class="container">
+<template v-if="project">
 
-        <div style="color: white;">{{ $route.params.id }} </div>
+  <template v-if="project.cover_image.startsWith('uploads')">
+    <img :src="base_api_url + '/storage/' + project.cover_image" alt="" />
+  </template>
+  <template>
+    <img :src="project.cover_image" alt="" />
+  </template>
 
 
-    </div>
+
+       <h3 class="py-4 font-bold">
+        {{ project.title }}
+      </h3>
+
 </template>
 <style></style>
-

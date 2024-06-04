@@ -79,13 +79,20 @@ export default {
         <h1 class="latest_projects">Latest Projects</h1>
         <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4" style="justify-content: center;">
             <div class="col " v-for="project in laterProjects">
+
                 <div class="card-img-top">
+                
+                
+                <router-link :to="{name: 'AppShow', params: {slug: project} }"> View post
+                  
                     <template v-if="project.cover_image.startsWith('uploads')">
                         <img :src="base_api_url + '/storage/' + project.cover_image" alt="">
                     </template>
                     <template>
                         <img :src="project.cover_image" alt="">
                     </template>
+                </router-link>
+
                 </div>
                 <h2>
                     {{ project.title }}
