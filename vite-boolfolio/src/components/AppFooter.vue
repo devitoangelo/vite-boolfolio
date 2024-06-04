@@ -107,11 +107,12 @@ li:hover {
         display: flex;
         width: 80%;
         display: flex;
-        height: 70px;
+        height: 50px;
         justify-content: space-around;
         margin: auto;
         background-color: rgb(40, 39, 39);
         align-items: center;
+        font-size: smaller;
     
 
 

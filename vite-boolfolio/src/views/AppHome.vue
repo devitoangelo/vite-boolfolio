@@ -83,7 +83,7 @@ export default {
                 <div class="card-img-top">
                 
                 
-                <router-link :to="{name: 'AppShow', params: {slug: project} }"> View post
+                <router-link :to="{name: 'AppShow', params: {slug: project.slug} }"> View post
                   
                     <template v-if="project.cover_image.startsWith('uploads')">
                         <img :src="base_api_url + '/storage/' + project.cover_image" alt="">
