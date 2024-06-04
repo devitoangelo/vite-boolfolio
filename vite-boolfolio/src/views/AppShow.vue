@@ -12,25 +12,21 @@ export default {
       base_projects_url: "/api/projects",
     };
   },
-  methods: {
-
-  },
   mounted() {
-    console.log(this.$route.params.id, this.base_api_url, this.base_projects_url);
-
-    const url =
-      this.base_api_url + this.base_projects_url + "/${this.$route.params.slug}";
+    const url = this.base_api_url + this.base_projects_url + `/` + `this.$route.params.id`;
+    // const slug = this.$route.params.id;
+    // const url = this.base_api_url + this.base_projects_url + `/` * 37;
     console.log(url);
-
     axios
       .get(url)
       .then((response) => {
         console.log(response);
         if (response.data.success) {
-          console.log(response.data.response);
+          //   console.log(response.data.response);
           this.project = response.data.response;
           this.loading = false;
         } else {
+            this.$router.push({name: 'not-found'})
         }
       })
       .catch((err) => {
@@ -40,20 +36,31 @@ export default {
 };
 </script>
 
-<template v-if="project">
+<template>
+  <div v-if="project" class="container_img">
+    <template v-if="project.cover_image.startsWith('uploads')">
+      <img
+        height="80%"
+        width="100"
+        :src="base_api_url + '/storage/' + project.cover_image"
+        alt=""
+      />
+    </template>
+    <template>
+      <img :src="project.cover_image" alt="" />
+    </template>
 
-  <template v-if="project.cover_image.startsWith('uploads')">
-    <img :src="base_api_url + '/storage/' + project.cover_image" alt="" />
-  </template>
-  <template>
-    <img :src="project.cover_image" alt="" />
-  </template>
-
-
-
-       <h3 class="py-4 font-bold">
-        {{ project.title }}
-      </h3>
-
+    <h3 class="py-4 font-bold text-center">
+      {{ project.title }}
+    </h3>
+  </div>
 </template>
-<style></style>
+<style>
+.container_img {
+  height: 400px;
+}
+
+img {
+  object-fit: contain;
+}
+</style>
