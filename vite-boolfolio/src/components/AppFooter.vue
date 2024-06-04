@@ -2,9 +2,14 @@
 export default {
     name: 'AppFooter'
 }
+
+
 </script>
 
 <template>
+    <div>
+
+    </div>
     <div class="container-fluid pt-5" style="background-color: rgb(234, 225, 225);">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 ">
             <div class="col text-center">
@@ -17,17 +22,6 @@ export default {
                     </p>
                 </ul>
             </div>
-            <div class="col text-center">
-                <h3>Links</h3>
-                <ul class="list-unstyled">
-                    <li>Home</li>
-                    <li>Blog</li>
-                    <li>About</li>
-                    <li>Contacts</li>
-
-                </ul>
-            </div>
-
             <div class="col text-center">
                 <h3>Social</h3>
                 <ul class="list-unstyled">
@@ -45,12 +39,40 @@ export default {
             </div>
             <div class="col img_footer">
             </div>
-
         </div>
     </div>
+
+<div class="container_">
+    <div class="container_copy">
+        <div class="copy text-white">
+
+            <p>
+                © 2024 Angelo Devito
+
+            </p>
+
+
+
+        </div>
+        <div class="container_links">
+            <ul class="links text-white">
+                <router-link class="text-white" :to="{name: 'home'}">Home</router-link>
+                <router-link class="text-white" :to="{name: 'about'}">About</router-link>
+                <router-link class="text-white" :to="{name: 'blog'}">Projects</router-link>
+                <router-link class="text-white" :to="{name: 'contacts'}">Contacts</router-link>
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+ 
 </template>
 
 <style>
+
 .img_logo {
     width: 100px;
     height: 100px;
@@ -74,4 +96,42 @@ a:hover {
 li:hover {
     font-size: large;
 }
+
+.container_{
+    background-color: rgb(40, 39, 39);
+
+
+
+
+    .container_copy {
+        display: flex;
+        width: 80%;
+        display: flex;
+        height: 70px;
+        justify-content: space-around;
+        margin: auto;
+        background-color: rgb(40, 39, 39);
+        align-items: center;
+    
+
+
+        .links {
+            display: flex;
+            list-style: none;
+            color: white;
+            align-items: end;
+        }
+        
+
+
+    }
+
+
+}
+
+
+
+
+
+
 </style>

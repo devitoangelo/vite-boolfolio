@@ -11,15 +11,19 @@ export default {
                 <img class="img_logo" src="/images/logo.png" alt="">
             </div>
             <div>
-                <router-link :to="{name: 'home'}">Home</router-link>
-                <router-link :to="{name: 'about'}">About</router-link>
-                <router-link :to="{name: 'blog'}">Projects</router-link>
-                <router-link :to="{name: 'contacts'}">Contacts</router-link>
+                <router-link :to="{ name: 'home' }">Home</router-link>
+                <router-link :to="{ name: 'about' }">About</router-link>
+                <router-link :to="{ name: 'blog' }">Projects</router-link>
+                <router-link :to="{ name: 'contacts' }">Contacts</router-link>
             </div>
         </div>
 
 
     </div>
+
+
+
+   
 </template>
 <style>
 .container_links {
@@ -46,6 +50,5 @@ export default {
     }
 
 }
-
 
 </style>

@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col">
                 <h1>My Projects</h1>
@@ -98,7 +98,12 @@ export default {
     </div>
 </template>
 
+
+
+
 <style>
+
+
 .list_technologies {
     list-style: none;
     display: flex;
